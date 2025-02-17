@@ -9,29 +9,44 @@ public enum RoadLine
 public class Runner : MonoBehaviour
 {
     [SerializeField]RoadLine currentLine = RoadLine.MIDDLE;
+    Rigidbody rigid;
+    [SerializeField] float offsetX = 2.5f;
 
     private void Start()
     {
         currentLine = RoadLine.MIDDLE;
+        rigid = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A))
+        OnKeyUpdate();
+    }
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+    public void OnKeyUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            if(currentLine > RoadLine.LEFT)
+            if (currentLine > RoadLine.LEFT)
             {
                 currentLine--;
-                transform.Translate(-2.5f * Vector3.right);
             }
         }
-        if(Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            if(currentLine < RoadLine.RIGHT)
+            if (currentLine < RoadLine.RIGHT)
             {
                 currentLine++;
-                transform.Translate(2.5f * Vector3.right);
             }
         }
     }
+    public void Move()
+    {
+        rigid.position = new Vector3(2.5f * (float)currentLine, 0, -6);
+    }
+
 }
