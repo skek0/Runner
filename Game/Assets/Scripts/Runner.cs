@@ -11,11 +11,13 @@ public class Runner : MonoBehaviour
     [SerializeField]RoadLine currentLine = RoadLine.MIDDLE;
     Rigidbody rigid;
     [SerializeField] float offsetX = 2.5f;
+    [SerializeField] Animator animator;
 
     private void Start()
     {
         currentLine = RoadLine.MIDDLE;
         rigid = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -34,6 +36,7 @@ public class Runner : MonoBehaviour
             if (currentLine > RoadLine.LEFT)
             {
                 currentLine--;
+                animator.Play("Left_Avoid");
             }
         }
         if (Input.GetKeyDown(KeyCode.D))
@@ -41,6 +44,7 @@ public class Runner : MonoBehaviour
             if (currentLine < RoadLine.RIGHT)
             {
                 currentLine++;
+                animator.Play("Right_Avoid");
             }
         }
     }

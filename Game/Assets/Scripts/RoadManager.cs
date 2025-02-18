@@ -20,17 +20,13 @@ public class RoadManager : MonoBehaviour
         {
             road.Translate(speed* Time.deltaTime * Vector3.back);
         }
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            InitializePosition();
-        }
     }
 
     public void InitializePosition()
     {
         Transform road = roads[0];
         roads.RemoveAt(0);
-        road.Translate(40 * Vector3.forward);
+        road.Translate(40 * (roads.Count+1) * Vector3.forward);
         roads.Add(road);
     }
 }
