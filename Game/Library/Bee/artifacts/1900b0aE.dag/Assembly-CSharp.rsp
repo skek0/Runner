@@ -362,10 +362,12 @@
 "Assets/Scripts/Managers/MenuManager.cs"
 "Assets/Scripts/Managers/RoadManager.cs"
 "Assets/Scripts/Managers/SceneryManager.cs"
+"Assets/Scripts/ObstacleManager.cs"
 "Assets/Scripts/Road.cs"
 "Assets/Scripts/Runner.cs"
 "Assets/Scripts/Select.cs"
 "Assets/Scripts/Singleton.cs"
+"Assets/Scripts/SpeedManager.cs"
 -langversion:9.0
 /deterministic
 /optimize+

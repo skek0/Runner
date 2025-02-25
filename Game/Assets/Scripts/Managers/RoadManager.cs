@@ -18,7 +18,7 @@ public class RoadManager : MonoBehaviour
     {
         foreach (var road in roads)
         {
-            road.Translate(speed* Time.deltaTime * Vector3.back);
+            road.Translate(SpeedManager.Speed * Time.deltaTime * Vector3.back);
         }
     }
 
