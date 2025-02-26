@@ -1,21 +1,25 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleManager : MonoBehaviour
 {
+    [SerializeField] int createCount = 5;
     [SerializeField] List<GameObject> obstacles;
 
-    [SerializeField] List<GameObject> obstacleList;
+    [SerializeField] List<string> obstacleNames;
 
     private void Start()
     {
-        AddObstacle();
+        Create();
     }
-    void AddObstacle()
+    public void Create()
     {
-        GameObject newObstacle = Instantiate(obstacles[Random.Range(0, obstacles.Count)]);
-        obstacleList.Add(newObstacle);
-        newObstacle.SetActive(false);
+        obstacles.Capacity = 10;
+        for (int i = 0; i < createCount; i++)
+        {
+            GameObject prefab = ResourcesManager.Instance.Instantiate(obstacleNames[Random.Range(0,obstacleNames.Count)]);
+            prefab.SetActive(false);
+            obstacles.Add(prefab);
+        }
     }
 }

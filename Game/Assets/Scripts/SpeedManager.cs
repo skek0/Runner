@@ -22,8 +22,6 @@ public class SpeedManager : MonoBehaviour
         {
             yield return interval;
             speed += 2;
-            Debug.Log(speed);
         }
-        Debug.Log(speed);
     }
 }

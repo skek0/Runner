@@ -363,6 +363,7 @@
 "Assets/Scripts/Managers/RoadManager.cs"
 "Assets/Scripts/Managers/SceneryManager.cs"
 "Assets/Scripts/ObstacleManager.cs"
+"Assets/Scripts/ResourcesManager.cs"
 "Assets/Scripts/Road.cs"
 "Assets/Scripts/Runner.cs"
 "Assets/Scripts/Select.cs"
