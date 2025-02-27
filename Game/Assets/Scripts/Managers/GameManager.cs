@@ -15,8 +15,6 @@ public class GameManager : Singleton<GameManager>
 
     public void Finish()
     {
-        state = false;
-
-        
+        state = false;        
     }
 }
