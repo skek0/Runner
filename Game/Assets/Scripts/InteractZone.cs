@@ -6,6 +6,6 @@ public class InteractZone : MonoBehaviour
     {
         IHitable clone = other.GetComponent<IHitable>();
 
-        clone?.Activate();
+        clone?.Activate();        
     }
 }
