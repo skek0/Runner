@@ -6,10 +6,11 @@ public class ObstacleManager : MonoBehaviour
 {
     [SerializeField] int createCount = 5;
     [SerializeField] List<GameObject> obstacles;
+    int rand = 0;
 
     [SerializeField] List<string> obstacleNames;
 
-    WaitForSeconds waitforseconds = new WaitForSeconds(2.5f);
+    WaitForSeconds waitforseconds = new(2.5f);
 
     private void Start()
     {
@@ -26,11 +27,14 @@ public class ObstacleManager : MonoBehaviour
             AddObstacle();
         }
     }
+    public GameObject GetObstacle()
+    {
+        return obstacles[rand];
+    }
 
     IEnumerator ActivateObstacles()
     {
         int count = 0;
-        int rand = 0;
         while(true) // 2.5초마다 반복
         {
             count = 0;
@@ -49,7 +53,7 @@ public class ObstacleManager : MonoBehaviour
                 continue;
             }
 
-            obstacles[rand].SetActive(true);
+            //obstacles[rand].SetActive(true);
             yield return waitforseconds;
         }
     }

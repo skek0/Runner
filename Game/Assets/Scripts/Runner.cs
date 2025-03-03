@@ -9,8 +9,8 @@ public enum RoadLine
 public class Runner : MonoBehaviour
 {
     [SerializeField]RoadLine currentLine = RoadLine.MIDDLE;
-    Rigidbody rigid;
-    [SerializeField] float offsetX = 2.5f;
+    Rigidbody rigid; 
+    [SerializeField] private float offsetX = 2.5f; public float OffsetX => offsetX;
     [SerializeField] Animator animator;
     [SerializeField] float verticalSpeed = 25.0f;
 
@@ -61,5 +61,4 @@ public class Runner : MonoBehaviour
             new Vector3(offsetX * (int)currentLine, 0, -4),
             Time.fixedDeltaTime * verticalSpeed);
     }
-
 }
