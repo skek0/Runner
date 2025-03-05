@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum RoadLine
@@ -23,8 +24,16 @@ public class Runner : MonoBehaviour
 
     private void Update()
     {
-        OnKeyUpdate();
+        if (GameManager.Instance.State)
+        {
+            OnKeyUpdate();
+        }
+        else
+        {
+            Die();
+        }
     }
+
     private void FixedUpdate()
     {
         Move();
@@ -58,7 +67,23 @@ public class Runner : MonoBehaviour
         // Lerp함수의 t 값이 프레임마다 Time.DeltaTime만큼 증가하고 그에따라 대상이 부드럽게 움직
         rigid.position = Vector3.Lerp
             (rigid.position,
-            new Vector3(offsetX * (int)currentLine, 0, -4),
+            new Vector3(offsetX * (int)currentLine, rigid.position.y, rigid.position.z),
             Time.fixedDeltaTime * verticalSpeed);
+    }
+
+    private void Die()
+    {
+        GameManager.Instance.Finish();
+
+        animator.Play("Die");
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Obstacle obstacle = other.GetComponent<Obstacle>();
+
+        if(obstacle != null)
+        {
+            Die();
+        }
     }
 }

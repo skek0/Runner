@@ -9,7 +9,7 @@ public class PositionManager : MonoBehaviour
     [SerializeField] List<Transform> parentRoads;
     [SerializeField] List<float> randomPositionZ;
     [SerializeField] Transform[] positionRandomX;
-    ObstacleManager obstacleManager;
+    [SerializeField]ObstacleManager obstacleManager;
 
     private void Awake()
     {
@@ -38,7 +38,7 @@ public class PositionManager : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(2.5f);
+            yield return CoroutineCache.WaitforSeconds(2.5f);
 
             transform.localPosition = new Vector3(0, 0, randomPositionZ[Random.Range(0, randomPositionZ.Count)]);
             obstacleManager.GetObstacle().SetActive(true);

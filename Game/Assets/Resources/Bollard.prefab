@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 682651933695003148}
   - component: {fileID: 7190155163443479372}
+  - component: {fileID: 2350026723516546470}
   m_Layer: 0
   m_Name: Bollard
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8207728638077120443}
@@ -56,6 +57,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5029768, y: 1.0182879, z: 0.48791546}
   m_Center: {x: -0.000000014901161, y: 0.49071288, z: -0.0075306892}
+--- !u!114 &2350026723516546470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158352753535455414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1d3d098d83c2447a5ea4ee7d5f28e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &466720071795633786
 GameObject:
   m_ObjectHideFlags: 0

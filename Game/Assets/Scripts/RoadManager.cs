@@ -16,9 +16,12 @@ public class RoadManager : MonoBehaviour
 
     private void Update()
     {
-        foreach (var road in roads)
+        if (GameManager.Instance.State)
         {
-            road.Translate(SpeedManager.Speed * Time.deltaTime * Vector3.back);
+            foreach (var road in roads)
+            {
+                road.Translate(SpeedManager.Speed * Time.deltaTime * Vector3.back);
+            }
         }
     }
 

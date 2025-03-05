@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 
 public class ObstacleManager : MonoBehaviour
@@ -34,28 +35,33 @@ public class ObstacleManager : MonoBehaviour
 
     IEnumerator ActivateObstacles()
     {
-        int count = 0;
-        while(true) // 2.5초마다 반복
+        while(GameManager.Instance.State) // 2.5초마다 반복
         {
-            count = 0;
+            yield return CoroutineCache.WaitforSeconds(2.5f);
+
             rand = Random.Range(0, obstacles.Count);
 
-            while (obstacles[rand].activeSelf && count < obstacles.Count)
+            while (obstacles[rand].activeSelf)
             {
-                rand = (rand+1)% obstacles.Count;
-                count++;
+                if(ExamineActive())
+                {
+                    AddObstacle();
+                }
+                rand = (rand+1) % obstacles.Count;
             }
-            if (count >= obstacles.Count)
-            {
-                AddObstacle();
-                obstacles[obstacles.Count - 1].SetActive(true);
-                yield return waitforseconds;
-                continue;
-            }
-
-            //obstacles[rand].SetActive(true);
-            yield return waitforseconds;
         }
+    }
+
+    private bool ExamineActive()
+    {
+        for (int i = 0; i < obstacles.Count; i++)
+        {
+            if (obstacles[i].activeSelf == false)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     void AddObstacle()

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    private bool state;
+    private bool state = true;
 
-    public bool State {  get { return state; } }
+    public bool State { get { return state; } }
 
     public void Execute()
     {
@@ -15,6 +15,6 @@ public class GameManager : Singleton<GameManager>
 
     public void Finish()
     {
-        state = false;        
+        state = false;
     }
 }

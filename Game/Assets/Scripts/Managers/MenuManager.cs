@@ -6,6 +6,8 @@ public class MenuManager : MonoBehaviour
 {
     public void Execute()
     {
+        GameManager.Instance.Execute();
+
         StartCoroutine(SceneryManager.Instance.AsyncLoad(1));
     }
     public void Quit()
