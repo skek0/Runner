@@ -366,6 +366,7 @@
 "Assets/Scripts/Managers/SceneryManager.cs"
 "Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/ObstacleManager.cs"
+"Assets/Scripts/ObstacleSearch.cs"
 "Assets/Scripts/PositionManager.cs"
 "Assets/Scripts/ResourcesManager.cs"
 "Assets/Scripts/Road.cs"

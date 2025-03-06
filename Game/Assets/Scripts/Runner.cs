@@ -70,11 +70,14 @@ public class Runner : MonoBehaviour
             new Vector3(offsetX * (int)currentLine, rigid.position.y, rigid.position.z),
             Time.fixedDeltaTime * verticalSpeed);
     }
-
+    public void SynchoronizationSpeed()
+    {
+        animator.speed = SpeedManager.Speed / 20;
+    }
     private void Die()
     {
         GameManager.Instance.Finish();
-
+        
         animator.Play("Die");
     }
     private void OnTriggerEnter(Collider other)
