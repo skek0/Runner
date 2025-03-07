@@ -364,6 +364,7 @@
 "Assets/Scripts/Managers/GameManager.cs"
 "Assets/Scripts/Managers/MenuManager.cs"
 "Assets/Scripts/Managers/SceneryManager.cs"
+"Assets/Scripts/Managers/TimeManager.cs"
 "Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/ObstacleManager.cs"
 "Assets/Scripts/ObstacleSearch.cs"

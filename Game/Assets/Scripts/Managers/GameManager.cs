@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    private bool state = true;
+    private bool state = false;
 
     public bool State { get { return state; } }
 

@@ -38,7 +38,7 @@ public class PositionManager : MonoBehaviour
     {
         while(true)
         {
-            yield return CoroutineCache.WaitforSeconds(2.5f);
+            yield return CoroutineCache.WaitforSeconds(TimeManager.Instance.ActiveTime);
 
             transform.localPosition = new Vector3(0, 0, randomPositionZ[Random.Range(0, randomPositionZ.Count)]);
             obstacleManager.GetObstacle().SetActive(true);

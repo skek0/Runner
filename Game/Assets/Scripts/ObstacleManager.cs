@@ -11,8 +11,6 @@ public class ObstacleManager : MonoBehaviour
 
     [SerializeField] List<string> obstacleNames;
 
-    WaitForSeconds waitforseconds = new(2.5f);
-
     private void Start()
     {
         Create();
@@ -37,7 +35,7 @@ public class ObstacleManager : MonoBehaviour
     {
         while(GameManager.Instance.State) // 2.5초마다 반복
         {
-            yield return CoroutineCache.WaitforSeconds(2.5f);
+            yield return CoroutineCache.WaitforSeconds(TimeManager.Instance.IncreaseTime);
 
             rand = Random.Range(0, obstacles.Count);
 
