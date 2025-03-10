@@ -376,6 +376,7 @@
 "Assets/Scripts/Select.cs"
 "Assets/Scripts/Singleton.cs"
 "Assets/Scripts/SpeedManager.cs"
+"Assets/Scripts/Timer.cs"
 -langversion:9.0
 /deterministic
 /optimize+
